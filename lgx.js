@@ -43,9 +43,9 @@ for (let i = 0; i < 5; i++) {
       async function getemail() {
          return new Promise((resolve, reject) => {
            superagent
-             .post("https://mob2.temp-mail.org/mailbox")
+             .post("https://temp-mail.org/mailbox")
              .set({
-               'Host': 'mob2.temp-mail.org',
+               'Host': 'temp-mail.org',
                'Accept': 'application/json',
                'Content-Length': '0',
                'User-Agent': '3.00',
@@ -106,9 +106,9 @@ for (let i = 0; i < 5; i++) {
       async function getmailbox(token) {
         return new Promise((resolve, reject) => {
           superagent
-            .get("https://mob2.temp-mail.org/messages")
+            .get("https://temp-mail.org/messages")
             .set({
-              'Host': 'mob2.temp-mail.org',
+              'Host': 'temp-mail.org',
               'Accept': 'application/json',
               'Content-Type': 'application/json',
               'Authorization': token,
@@ -136,9 +136,9 @@ for (let i = 0; i < 5; i++) {
                   async function getbody(token,id) {
                     return new Promise((resolve, reject) => {
                       superagent
-                        .get("https://mob2.temp-mail.org/messages/"+id)
+                        .get("https://temp-mail.org/messages/"+id)
                         .set({
-                          'Host': 'mob2.temp-mail.org',
+                          'Host': 'temp-mail.org',
                           'Accept': 'application/json',
                           'Content-Type': 'application/json',
                           'Authorization': token,
@@ -163,7 +163,7 @@ for (let i = 0; i < 5; i++) {
                         .get(link)
                         .set({
                           'Accept': '*/*',
-                          "referer": "https://mob2.temp-mail.org/messages/"+id,
+                          "referer": "https://temp-mail.org/messages/"+id,
                           "sec-fetch-dest": "document",
                           "sec-fetch-mode": "navigate",
                           "sec-fetch-site": "same-origin",
